@@ -1,0 +1,108 @@
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro de Materias</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+  </head>
+    <body>
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Materias</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="inicio">Inicio</a></li>
+                            <li class="breadcrumb-item active">Materias</li>
+                        </ol>
+                        <form [formGroup]="rmaterias" (ngSubmit)="registrar(rmaterias.value)" novalidate>
+                            <div class="form-row offset-md-1" >
+                                <div class="col-sm-8 my-1 offset-md-1">
+                                    <label class="sr-only" for="inlineFormInputGroupUsername">Materias</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Nombre de la materia</div>
+                                        </div>
+                                        <input [(ngModel)]="nombre" type="text" class="form-control" formControlName="nombre" id="nombre"  name="nombre"   placeholder="Nombre de la materia" required autofocus>
+                                
+                                    </div> 
+                                    <div class="err" *ngIf="rmaterias.get('nombre').errors && rmaterias.get('nombre').dirty">
+                                        <p *ngIf="rmaterias.get('nombre').hasError('required')">Campo requerido</p>
+                                        </div> 
+                                        <hr>
+                                         <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Clave</div>
+                                    </div>
+                                    <input [(ngModel)]="clave" type="text" class="form-control" formControlName="clave" id="clave"  name="clave" placeholder="Clave" required autofocus>
+                            
+                                </div>
+                                <div class="err" *ngIf="rmaterias.get('clave').errors && rmaterias.get('clave').dirty">
+                                    <p *ngIf="rmaterias.get('clave').hasError('required')">Campo requerido</p>
+                                    </div> 
+                                <hr>
+                                         <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Grado</div>
+                                    </div>
+                                    <input [(ngModel)]="grado" type="text" class="form-control" formControlName="grado" id="grado"  name="grado"   placeholder="grado del Profesor" required autofocus>
+                            
+                                </div>
+                                <div class="err" *ngIf="rmaterias.get('grado').errors && rmaterias.get('grado').dirty">
+                                    <p *ngIf="rmaterias.get('grado').hasError('required')">Campo requerido</p>
+                                    </div> 
+                                <hr>
+                                         <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Horas:</div>
+                                    </div>
+                                    <input [(ngModel)]="hora" type="text" class="form-control" formControlName="hora" id="hora"  name="hora"   placeholder="Hora Laboral" required autofocus>
+                            
+                                </div>
+                                <div class="err" *ngIf="rmaterias.get('hora').errors && rmaterias.get('hora').dirty">
+                                    <p *ngIf="rmaterias.get('hora').hasError('required')">Campo requerido</p>
+                                    </div> 
+                                <hr><hr>
+                                <div class="form-group" class="form-group col-md-5">
+                                  <button type="submit"  [disabled]="rmaterias.invalid"  (click)="guardarArray()" class="btn btn-primary col-md-5">Guardar</button>
+                                  <button  (click)="mostrarArray()" class="btn btn-success  offset-md-1" >Mostrar Datos</button>
+                                </div>
+                                
+                              </div>
+                              <hr><hr>
+                              
+                              <div class="form-row">
+                                <div class="input-group mb-4 offset-md-1" >
+                            <div class="card border-info offset-md-1" style="max-width: 18rem;" *ngFor="let item of materias; let indice=index">
+                                <div class="card-header"><p>{{item}}</p></div>
+                                <div class="card-body text-info" >
+                                  <h5 class="card-title"></h5>
+                                </div>
+                            </div>
+                        </div></div>
+                    </div>
+                        </form>
+                    </div>
+                    </main>
+                    <footer class="py-4 bg-light mt-auto">
+                        <div class="container-fluid">
+                            <div class="d-flex align-items-center justify-content-between small">
+                                <div class="text-muted">Copyright &copy; Tech-Horarios 2020</div>
+                                <div>
+                                    <a href="#">Privacy Policy</a>
+                                    &middot;
+                                    <a href="#">Terms &amp; Conditions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                        
+                                
+                        
+                          
+                        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>

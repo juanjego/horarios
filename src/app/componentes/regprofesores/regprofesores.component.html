@@ -1,0 +1,131 @@
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+  </head>
+    <body>
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Profesores</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="inicio">Inicio</a></li>
+                            <li class="breadcrumb-item active">Profesores</li>
+                        </ol>
+                        <form [formGroup]="rprofesores" (ngSubmit)="registrar(rprofesores.value)" novalidate>
+                            <div class="form-row offset-md-1" >
+                                <div class="col-sm-8 my-1 offset-md-1">
+                                    <label class="sr-only" for="inlineFormInputGroupUsername">Profesor</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Nombre</div>
+                                        </div>
+                                        <input [(ngModel)]="nombre" type="text" class="form-control" formControlName="nombre" id="nombre"  name="nombre"   placeholder="Nombre del Profesor" required autofocus>
+                                
+                                    </div> 
+                                    <div class="err" *ngIf="rprofesores.get('nombre').errors && rprofesores.get('nombre').dirty">
+                                        <p *ngIf="rprofesores.get('nombre').hasError('required')">Campo requerido</p>
+                                        </div> 
+                                        <hr>
+                                         <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Apellidos</div>
+                                    </div>
+                                    <input [(ngModel)]="apellidos" type="text" class="form-control" formControlName="apellidos" id="apellidos"  name="apellidos"   placeholder="Apellidos del Profesor" required autofocus>
+                            
+                                </div>
+                                <div class="err" *ngIf="rprofesores.get('apellidos').errors && rprofesores.get('apellidos').dirty">
+                                    <p *ngIf="rprofesores.get('apellidos').hasError('required')">Campo requerido</p>
+                                    </div> 
+                                <hr>
+                                         <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Titulo</div>
+                                    </div>
+                                    <input [(ngModel)]="titulo" type="text" class="form-control" formControlName="titulo" id="titulo"  name="titulo"   placeholder="Titulo del Profesor" required autofocus>
+                            
+                                </div>
+                                <div class="err" *ngIf="rprofesores.get('titulo').errors && rprofesores.get('titulo').dirty">
+                                    <p *ngIf="rprofesores.get('titulo').hasError('required')">Campo requerido</p>
+                                    </div> 
+                                <hr>
+                                         <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Tipo Laboral</div>
+                                    </div>
+                                    <input [(ngModel)]="tipo" type="text" class="form-control" formControlName="tipo" id="tipo"  name="tipo"   placeholder="Tipo Laboral" required autofocus>
+                            
+                                </div>
+                                <div class="err" *ngIf="rprofesores.get('tipo').errors && rprofesores.get('tipo').dirty">
+                                    <p *ngIf="rprofesores.get('tipo').hasError('required')">Campo requerido</p>
+                                    </div> 
+                                <hr>
+                                         <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Horario de Entrada</div>
+                                    </div>
+                                    <input [(ngModel)]="entrada" type="text" class="form-control" formControlName="entrada" id="entrada"  name="entrada"   placeholder="Hora de Entrada" required autofocus>
+                            
+                                </div>
+                                <div class="err" *ngIf="rprofesores.get('entrada').errors && rprofesores.get('entrada').dirty">
+                                    <p *ngIf="rprofesores.get('entrada').hasError('required')">Campo requerido</p>
+                                    </div> 
+                                <hr>
+                                <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">Horario de Salida</div>
+                           </div>
+                           <input [(ngModel)]="salida" type="text" class="form-control" formControlName="salida" id="salida"  name="salida"   placeholder="Hora de Salida" required autofocus>
+                   
+                       </div>
+                       <div class="err" *ngIf="rprofesores.get('salida').errors && rprofesores.get('salida').dirty">
+                           <p *ngIf="rprofesores.get('salida').hasError('required')">Campo requerido</p>
+                           </div> 
+                       </div>
+                                <hr><hr>
+                                
+                              
+                                <div class="form-group" class="form-group col-md-2">
+                                  <button  (click)="mostrarArray()" class="btn btn-success mb-2 offset-md-1" >Mostrar Datos</button>
+                                </div>
+                                  <button type="submit"  [disabled]="rprofesores.invalid"  (click)="guardarArray()" class="btn btn-primary col-md-2">Guardar</button>
+                              </div>
+                              <hr><hr>
+                              
+                              <div class="form-row">
+                                <div class="input-group mb-4 offset-md-1" >
+                            <div class="card border-info offset-md-1" style="max-width: 18rem;" *ngFor="let item of profesores; let indice=index">
+                                <div class="card-header"><p>{{item}}</p></div>
+                                <div class="card-body text-info" >
+                                  <h5 class="card-title"></h5>
+                                </div>
+                            </div>
+                        </div></div>
+                        </form>
+                    </div>
+                    </main>
+                    <footer class="py-4 bg-light mt-auto">
+                        <div class="container-fluid">
+                            <div class="d-flex align-items-center justify-content-between small">
+                                <div class="text-muted">Copyright &copy; Tech-Horarios 2020</div>
+                                <div>
+                                    <a href="#">Privacy Policy</a>
+                                    &middot;
+                                    <a href="#">Terms &amp; Conditions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                        
+                                
+                        
+                          
+                        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>

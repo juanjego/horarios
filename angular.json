@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tech-horarios"
+    }
+  },
+  "defaultProject": "tech-horarios",
+  "cli": {
+    "analytics": "54788b85-f49b-4694-aeb0-3e1daf248ae6"
+  }
 }

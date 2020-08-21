@@ -7,7 +7,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { CssComponent } from './componentes/css/css.component';
 import { NavComponent } from './componentes/nav/nav.component';
 import { HomeComponent } from './componentes/home/home.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginGuard } from './login.guard';
 import { NoLoginGuard } from './no-login.guard';
 import { HorariosComponent } from './componentes/horarios/horarios.component';
@@ -15,6 +15,8 @@ import { EspaciosComponent } from './componentes/espacios/espacios.component';
 import { MateriasComponent } from './componentes/materias/materias.component';
 import { ProfesoresComponent } from './componentes/profesores/profesores.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { RegprofesoresComponent } from './componentes/regprofesores/regprofesores.component';
+import { RegmateriasComponent } from './componentes/regmaterias/regmaterias.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +28,15 @@ import { RegistroComponent } from './componentes/registro/registro.component';
     EspaciosComponent,
     MateriasComponent,
     ProfesoresComponent,
-    RegistroComponent
+    RegistroComponent,
+    RegprofesoresComponent,
+    RegmateriasComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [LoginGuard, NoLoginGuard],
   bootstrap: [AppComponent]
