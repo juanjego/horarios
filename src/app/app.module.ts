@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { CssComponent } from './componentes/css/css.component';
 import { NavComponent } from './componentes/nav/nav.component';
 import { HomeComponent } from './componentes/home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -21,7 +20,6 @@ import { RegmateriasComponent } from './componentes/regmaterias/regmaterias.comp
   declarations: [
     AppComponent,
     LoginComponent,
-    CssComponent,
     NavComponent,
     HomeComponent,
     HorariosComponent,
